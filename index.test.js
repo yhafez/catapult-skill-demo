@@ -27,7 +27,7 @@ let successfulDeleteResponse1,
 
 let successfulModifyKeyResponse;
 
-// To avoid making http requests for every test, perform all desired fetch requests before executing any tests
+// To avoid making http requests for every test, perform all desired fetch calls before executing any tests
 beforeAll(async () => {
     successfulCreateReqResponse = await fetch(BASE_URL, {
         method: "post",
@@ -84,8 +84,6 @@ beforeAll(async () => {
             },
         }
     );
-
-    console.log(successfulModifyKeyResponse.status);
 
     // The difference between 1 and 2 is in the API route. The 1st uses the format I understood from the documentation. The 2nd uses the format automatically generated when using the console GUI in the documentation. Neither worked for me as expected.
 
